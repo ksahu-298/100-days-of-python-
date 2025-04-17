@@ -41,14 +41,7 @@ def print_resources():
 user_choice = input("Would you like to use the coffee machine? (yes/no)".lower())
 if user_choice == "no":
     print("Goodbye!")
-    order = "no"
 elif user_choice == "yes":
-    order = "yes"
-else:
-    print("Invalid input. Please try again.")
-    order = "no"    
-
-while order == "yes":
     print("Welcome to the coffee machine!")
     
     user_input = input("What would you like? (espresso/latte/cappuccino): ").lower()
@@ -126,3 +119,8 @@ while order == "yes":
     
     print("remaining resources is ",)
     print_resources()
+else:
+    print("Invalid input. Please try again.")
+   
+
+    
