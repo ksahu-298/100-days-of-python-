@@ -38,30 +38,37 @@ def print_resources():
     for item in resources:
         print(f"{item}: {resources[item]}ml")
 
-user_choice = input("Would you like to use the coffee machine? (yes/no)".lower())
+user_choice = input("Would you like to use the coffee machine? (yes/no) : ").lower()
 if user_choice == "no":
     print("Goodbye!")
 elif user_choice == "yes":
     print("Welcome to the coffee machine!")
-    
-    user_input = input("What would you like? (espresso/latte/cappuccino): ").lower()
-    print(f"You have selected {user_input}.")
 
     print("Your remaining resources are: " )
     print_resources()
 
+    
+    user_input = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    print(f"You have selected {user_input}.")
+
+  
     def check_resources(order_ingredients):
         '''Checks if there are enough resources to make the selected drink.'''
         if user_input == "espresso":
             print("Espresso is being made.")
+            print("your order cost : ", menu["espresso"]["ingredients"]["cost"])
             return order_ingredients["water"] <= resources["water"] and order_ingredients["coffee"] <= resources["coffee"]
         
         elif user_input == "latte":
             print("Latte is being made.")
+            print("your order cost : ", menu["latte"]["ingredients"]["cost"])
+
             return order_ingredients["water"] <= resources["water"] and order_ingredients["coffee"] <= resources["coffee"] and order_ingredients["milk"] <= resources["milk"]
             
         elif user_input == "cappuccino":
             print("Cappuccino is being made.")
+            print("your order cost : ", menu["cappuccino"]["ingredients"]["cost"])
+
             return order_ingredients["water"] <= resources["water"] and order_ingredients["coffee"] <= resources["coffee"] and order_ingredients["milk"] <= resources["milk"]
             
         else:
